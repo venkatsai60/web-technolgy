@@ -1,0 +1,23 @@
+<!-- Text Formatting -->
+<p><b>Bold Text</b></p>
+<p><i>Italic Text</i></p>
+<p><u>Underlined Text</u></p>
+<p><mark>Highlighted Text</mark></p>
+<p><small>Small Text</small></p>
+<p><strong>Strong Text</strong></p>
+
+<!-- DHTML (JavaScript) -->
+<button onclick="toggleImage()">Show/Hide Image</button>
+<img id="myImage" src="rec.jpg" alt="Sample Image">
+
+<script>
+    function toggleImage() {
+        var img = document.getElementById("myImage");
+        if (img.style.display === "none") {
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+    }
+</script>
+    

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+</head>
+<body>
+
+<h2>Factorial Calculator using PHP</h2>
+
+<form method="post">
+    Enter a number: <input type="number" name="num" required>
+    <input type="submit" value="Calculate">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num = intval($_POST["num"]);
+
+    function factorial($n) {
+        if ($n == 0 || $n == 1) {
+            return 1;
+        } else {
+            return $n * factorial($n - 1);
+        }
+    }
+
+    $result = factorial($num);
+    echo "<h3>Factorial of $num is: $result</h3>";
+}
+?>
+
+</body>
+</html>

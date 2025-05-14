@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scientific Calculator</title>
+  <script>
+    function insert(val) {
+      document.getElementById("result").value += val;
+    }
+
+    function clearDisplay() {
+      document.getElementById("result").value = "";
+    }
+
+    function backspace() {
+      let current = document.getElementById("result").value;
+      document.getElementById("result").value = current.slice(0, -1);
+    }
+
+    function calculate() {
+      try {
+        document.getElementById("result").value = eval(document.getElementById("result").value);
+      } catch (e) {
+        alert("Invalid Expression");
+      }
+    }
+
+    function scientific(fn) {
+      let val = parseFloat(document.getElementById("result").value);
+      if (isNaN(val)) {
+        alert("Please enter a number first.");
+        return;
+      }
+
+      switch (fn) {
+        case 'sqrt':
+          document.getElementById("result").value = Math.sqrt(val);
+          break;
+        case 'sin':
+          document.getElementById("result").value = Math.sin(val * Math.PI / 180);
+          break;
+        case 'cos':
+          document.getElementById("result").value = Math.cos(val * Math.PI / 180);
+          break;
+        case 'tan':
+          document.getElementById("result").value = Math.tan(val * Math.PI / 180);
+          break;
+        case 'log':
+          document.getElementById("result").value = Math.log10(val);
+          break;
+        case 'exp':
+          document.getElementById("result").value = Math.exp(val);
+          break;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Scientific Calculator</h1>
+  <input type="text" id="result" readonly><br><br>
+  <!-- Buttons here -->
+</body>
+</html>
+  

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experiment 10 - jQuery Selector</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <h2>Welcome to jQuery Selector Example</h2>
+  <p>This example demonstrates how to use jQuery to manipulate elements based on selectors.</p>
+
+  <button id="changeColor">Change Color</button>
+  <button id="hidePara">Hide Paragraphs</button>
+  <button id="showPara">Show Paragraphs</button>
+
+  <div class="box" style="border:1px solid black; padding:10px; margin-top:10px;">
+    <p class="highlight">This is paragraph 1</p>
+    <p>This is paragraph 2</p>
+    <p class="highlight">This is paragraph 3</p>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#changeColor').click(function() {
+        $('.highlight').css('color', 'blue');
+      });
+
+      $('#hidePara').click(function() {
+        $('p').hide();
+      });
+
+      $('#showPara').click(function() {
+        $('p').show();
+      });
+    });
+  </script>
+
+</body>
+</html>
+  
